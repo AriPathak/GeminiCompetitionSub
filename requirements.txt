@@ -1,6 +1,6 @@
 numpy==1.24.2
 Pillow==10.4.0
-protobuf<5 and >=3.20
+protobuf>=3.20,<5
 streamlit==1.35.0
 streamlit_drawable_canvas==0.9.3
 torchvision==0.15.2
