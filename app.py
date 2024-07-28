@@ -89,8 +89,7 @@ if st.session_state["uploader_visible"]:
         file = st.file_uploader("Upload your data")
         if file:
             img = Image.open(file)
-            canvas_width = img.size[0]
-            canvas_height = img.size[1]
+            canvas_width, canvas_height = img.size
             gpa = (canvas_width // 100) - 1
             clms = st.columns((gpa, 2))
             if st.session_state['first_file']:
