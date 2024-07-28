@@ -90,8 +90,20 @@ if st.session_state["uploader_visible"]:
         if file:
             img = Image.open(file)
             canvas_width, canvas_height = img.size
-            gpa = (canvas_width // 100) - 1
-            clms = st.columns((gpa, 2))
+            st.markdown("""
+            <style>
+            .stApp {
+                max-width: 100%;
+                padding: 0;
+            }
+            .stCanvas {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            </style>
+            """, unsafe_allow_html=True)
+            clms = st.columns((6, 2))
             if st.session_state['first_file']:
                 st.session_state['first_file'] = False
                 with st.spinner("Processing your file"):
