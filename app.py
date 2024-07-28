@@ -138,7 +138,7 @@ if st.session_state['arm_chatbox']:
             st.markdown(chat_box)
         st.session_state['messages'].append({"role": "user", "content": chat_box})
         
-        content = [st.session_state['cropped_img'], chat_box]
+        content = [st.session_state['cropped_img'], f'{chat_box} Please give a descriptive, accurate, and detailed response.']
         response = gemini.generate_content(content).text
         
         with st.chat_message('AION'):
